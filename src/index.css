@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arabic-body: 'Cairo', sans-serif;
+    --font-arabic-display: 'Aref Ruqaa', serif;
+    --font-english-display: 'Cinzel', serif;
+  }
+
+  body {
+    font-family: var(--font-arabic-body);
+    background-color: #0B0908;
+    color: #F5EFE6;
+  }
+}
+
+.font-display-ar {
+  font-family: var(--font-arabic-display);
+}
+
+.font-display-en {
+  font-family: var(--font-english-display);
+}
+
+/* Custom subtle scrollbars for horizontal category navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle Kilim / Oriental geometric border motif inspired by El Basha Logo */
+.kilim-divider {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(212, 168, 83, 0.25) 0px,
+    rgba(212, 168, 83, 0.25) 4px,
+    transparent 4px,
+    transparent 8px,
+    rgba(158, 27, 27, 0.35) 8px,
+    rgba(158, 27, 27, 0.35) 12px,
+    transparent 12px,
+    transparent 16px
+  );
+}
+
+/* Subtle floating ember keyframe using compositor-only transform & opacity */
+@keyframes float-ember {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.85);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-130px) translateX(18px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.ember-particle {
+  animation: float-ember var(--duration, 6s) ease-out infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ember-particle {
+    animation: none;
+    display: none;
+  }
+}

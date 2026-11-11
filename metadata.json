@@ -1,0 +1,6 @@
+{
+  "name": "مشويات الباشا – EL BASHA GRILL",
+  "description": "المنيو الإلكتروني الفاخر لمطعم مشويات الباشا - EL BASHA GRILL. مشويات الباشا... أنت الباشا.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
